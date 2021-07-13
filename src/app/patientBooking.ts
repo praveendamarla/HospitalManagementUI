@@ -4,6 +4,5 @@ export class PatientBooking{
     description!:string;
     reporting_doctor!: string;
     specialization!: string;   
-    userName! : String;
-   
+    userName! : string;
 }

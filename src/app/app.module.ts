@@ -12,7 +12,6 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { AdminComponent } from './admin/admin.component';
 import { DoctorComponent } from './doctor/doctor.component';
-import { PatientComponent } from './patient/patient.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +20,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PatientBookingDetailsComponent } from './patient-booking-details/patient-booking-details.component';
+import { DoctorBookingDetailsComponent } from './doctor-booking-details/doctor-booking-details.component';
+import { AdminDetailsPageComponent } from './admin-details-page/admin-details-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +34,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     UpdateEmployeeComponent,
     AdminComponent,
     DoctorComponent,
-    PatientComponent,
     EmployeeDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    PatientBookingDetailsComponent,
+    DoctorBookingDetailsComponent,
+    AdminDetailsPageComponent
   ],
   imports: [
     BrowserModule,

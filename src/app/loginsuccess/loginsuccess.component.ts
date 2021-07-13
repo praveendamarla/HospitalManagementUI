@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
+import { Patient } from '../Patient';
 import { PatientBooking } from '../patientBooking';
 
 @Component({
@@ -14,10 +16,17 @@ export class LoginsuccessComponent implements OnInit {
   specializationsList!: Set<string>; 
   doctorsDropDown: string[] = [];
   patientBooking = new PatientBooking();
+  bookingDetailsForPatient!: any;
+  appointmentDate: any;
+  userName:any;
+  patientsDetails!:Patient[];
+  patientDetails!:any;
+  patientBookings!: PatientBooking[];
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private router:Router, private route : ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.userName = this.route.snapshot.params['userName'];
   this.employeeService.getEmployeesList().subscribe(data =>{
    this.employees = data;
 
@@ -27,9 +36,12 @@ export class LoginsuccessComponent implements OnInit {
      this.doctorsListBasedOnSpecialization[eachSpecialization] = this.employees.filter(s=>s.specialization.includes(eachSpecialization));
    });
 
-
   });
   
+  this.employeeService.retreivePatientBookingDetails(this.userName).subscribe(data =>{
+    this.patientBookings = data;
+  });
+
   }
 
   onSelectionOfSpecialization(value:string){
@@ -41,13 +53,24 @@ export class LoginsuccessComponent implements OnInit {
   }
 
   bookAppoinmentForPatient(){
-    
+    this.patientBooking.dateOfAppointment = this.appointmentDate;
+  this.employeeService.getAllPatients().subscribe(res => {
+   this.patientsDetails =  res.filter(eachPatient => eachPatient.userName === this.userName);
+    this.patientDetails = this.patientsDetails[0];
+    this.patientBooking.userName = this.patientDetails.userName;
+
   this.employeeService.createBooking(this.patientBooking).subscribe(data =>{
     if(data !== null){
-      console.log("sucessfuly boked");
+      this.bookingDetailsForPatient = data;
+      this.employeeService.retreivePatientBookingDetails(this.userName).subscribe(data =>{
+        this.patientBookings = data;
+      });
     }
-  })
+  });
+  
+});
   }
+
 }
 
 

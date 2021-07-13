@@ -4,26 +4,27 @@ import { Observable } from 'rxjs';
 import { Employee } from './employee';
 import {User} from './../assets/user'
 import { PatientBooking } from './patientBooking';
+import { Patient } from './Patient';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  private baseURL = "http://localhost:8081/api/employees";
+  private baseURL = "http://localhost:8081/api";
 
   constructor(private httpClient: HttpClient) { }
   
   getEmployeesList(): Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(`${this.baseURL}`);
+    return this.httpClient.get<Employee[]>(`${this.baseURL}/employees`);
   }
 
   createEmployee(employee : Employee): Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}`,employee);
+    return this.httpClient.post(`${this.baseURL}/employees`,employee);
   }
 
   createBooking(patientBooking: PatientBooking){
-    return this.httpClient.post("http://localhost:8081/api/createPatient",patientBooking);
+    return this.httpClient.post("http://localhost:8081/api/createBooking",patientBooking);
   }
 
   public loginUserFromRemote(user : Employee):Observable<any>
@@ -42,18 +43,30 @@ export class EmployeeService {
 
   getEmployeeById(id : number):Observable<Employee>
   {
-    return  this.httpClient.get<Employee>(`${this.baseURL}/${id}`);
+    return  this.httpClient.get<Employee>(`${this.baseURL}/employees/${id}`);
   }
 
   updateEmployee(id : number,employee:Employee):Observable<Object>
   {
     console.log("hello world");
-    return  this.httpClient.put(`${this.baseURL}/${id}`,employee);
+    return  this.httpClient.put(`${this.baseURL}/employees/${id}`,employee);
   }
 
 deleteEmployee(id : number):Observable<Object>
 {
-  return  this.httpClient.delete(`${this.baseURL}/${id}`);
+  return  this.httpClient.delete(`${this.baseURL}/employees/${id}`);
 }
+
+retreivePatientBookingDetails(patientName:string):Observable<PatientBooking[]>
+{
+  return this.httpClient.get<PatientBooking[]>(`${this.baseURL}/bookingInfo/${patientName}`);
+}
+
+getAllPatients():Observable<Patient[]>
+{
+  return this.httpClient.get<Patient[]>("http://localhost:8081/api/getAllPatients");
+}
+
+
 }
 

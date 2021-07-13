@@ -26,7 +26,9 @@ this._service.loginUserFromRemote(this.employee).subscribe(
   {
     console.log(" recieved the response");
     if(this.employee.role == "Patient"){
-    this._router.navigate(['/loginsuccess']);
+    this._router.navigate(['/loginsuccess',_data.userName]);
+    }else if(this.employee.role == "Admin"){
+      this._router.navigate(['/admin-details-page',_data.userName]);
     }
   } ,
   _error=> 

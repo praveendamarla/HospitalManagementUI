@@ -7,25 +7,28 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { LoginComponent } from './login/login.component';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
-import { PatientComponent } from './patient/patient.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-
+import {PatientBookingDetailsComponent} from './patient-booking-details/patient-booking-details.component';
+import {DoctorBookingDetailsComponent} from './doctor-booking-details/doctor-booking-details.component';
+import {AdminDetailsPageComponent} from './admin-details-page/admin-details-page.component';
 
 
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'', redirectTo: 'login', pathMatch: 'full'},
-  {path:'loginsuccess', component: LoginsuccessComponent },
+  {path:'loginsuccess/:userName', component: LoginsuccessComponent },
   {path:'registration',component:RegistrationComponent},
   {path:'employees',component:EmployeeListComponent},
   {path:'create-employee',component:CreateEmployeeComponent},
   {path:'update-employee/:id',component:UpdateEmployeeComponent},
   {path:'employee-details/:id',component:EmployeeDetailsComponent},
   {path:'admin',component:AdminComponent},
-  {path:'patient',component:PatientComponent},
-  {path:'doctor',component:DoctorComponent}
+  {path:'doctor',component:DoctorComponent},
+  {path:'patient-booking-details/:username',component:PatientBookingDetailsComponent},
+  {path:'doctor-booking-details',component:DoctorBookingDetailsComponent},
+  {path:'admin-details-page/:username',component:AdminDetailsPageComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

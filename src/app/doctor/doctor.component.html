@@ -1,1 +1,18 @@
-<p>doctor works!</p>
+<p>patients Booking List</p>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> patient name</th>
+            <th> bookingdata </th>
+            <th> description </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let doctor of doctors" >
+            <td> {{ doctor.userName }} </td>
+            <td> {{ doctor.dateOfAppointment }} </td>
+            <td> {{ doctor.description }} </td>
+        </tr>
+    </tbody>
+</table>

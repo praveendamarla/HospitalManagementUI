@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Employee } from '../employee'
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-admin-details-page',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-details-page.component.css']
 })
 export class AdminDetailsPageComponent implements OnInit {
-
-  constructor() { }
+  employees!: Employee[];
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
   }
+
+  
+ 
 
 }

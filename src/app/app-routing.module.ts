@@ -12,6 +12,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import {PatientBookingDetailsComponent} from './patient-booking-details/patient-booking-details.component';
 import {DoctorBookingDetailsComponent} from './doctor-booking-details/doctor-booking-details.component';
 import {AdminDetailsPageComponent} from './admin-details-page/admin-details-page.component';
+import {AppointmentComponent} from './appointment/appointment.component';
 
 
 
@@ -25,10 +26,14 @@ const routes: Routes = [
   {path:'update-employee/:id',component:UpdateEmployeeComponent},
   {path:'employee-details/:id',component:EmployeeDetailsComponent},
   {path:'admin',component:AdminComponent},
-  {path:'doctor',component:DoctorComponent},
+  {path:'doctor/:reportingDoctor/:specialization',component:DoctorComponent},
   {path:'patient-booking-details/:username',component:PatientBookingDetailsComponent},
   {path:'doctor-booking-details',component:DoctorBookingDetailsComponent},
-  {path:'admin-details-page/:username',component:AdminDetailsPageComponent}
+  {path:'admin-details-page/:username',component:AdminDetailsPageComponent},
+  {path:'appointment',component:AppointmentComponent},
+  {path:'admin-details-page/admin/employees',component:EmployeeListComponent},
+  {path:'admin-details-page/admin/create-employee',component:CreateEmployeeComponent},
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

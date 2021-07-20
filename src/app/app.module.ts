@@ -23,6 +23,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PatientBookingDetailsComponent } from './patient-booking-details/patient-booking-details.component';
 import { DoctorBookingDetailsComponent } from './doctor-booking-details/doctor-booking-details.component';
 import { AdminDetailsPageComponent } from './admin-details-page/admin-details-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AppointmentComponent } from './appointment/appointment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { AdminDetailsPageComponent } from './admin-details-page/admin-details-pa
     HomeComponent,
     PatientBookingDetailsComponent,
     DoctorBookingDetailsComponent,
-    AdminDetailsPageComponent
+    AdminDetailsPageComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { AdminDetailsPageComponent } from './admin-details-page/admin-details-pa
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import { Employee } from './employee';
 import {User} from './../assets/user'
 import { PatientBooking } from './patientBooking';
 import { Patient } from './Patient';
+import { Doctor } from './doctor';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,7 @@ export class EmployeeService {
 
 deleteEmployee(id : number):Observable<Object>
 {
+  console.log("in delete");
   return  this.httpClient.delete(`${this.baseURL}/employees/${id}`);
 }
 
@@ -66,6 +68,15 @@ getAllPatients():Observable<Patient[]>
 {
   return this.httpClient.get<Patient[]>("http://localhost:8081/api/getAllPatients");
 }
+
+
+patientDetailsListForDoctor(reportingDoctor:string, specialization:string):Observable<Doctor[]>
+
+{
+  return this.httpClient.get<Doctor[]>(`${this.baseURL}/bookingInfo/${reportingDoctor}/${specialization}`);
+}
+
+
 
 
 }

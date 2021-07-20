@@ -29,6 +29,8 @@ this._service.loginUserFromRemote(this.employee).subscribe(
     this._router.navigate(['/loginsuccess',_data.userName]);
     }else if(this.employee.role == "Admin"){
       this._router.navigate(['/admin-details-page',_data.userName]);
+    }else if(this.employee.role == "Doctor"){
+      this._router.navigate(['/doctor',_data.userName,_data.specialization]);
     }
   } ,
   _error=> 

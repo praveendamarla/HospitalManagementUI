@@ -25,6 +25,9 @@ import { DoctorBookingDetailsComponent } from './doctor-booking-details/doctor-b
 import { AdminDetailsPageComponent } from './admin-details-page/admin-details-page.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     PatientBookingDetailsComponent,
     DoctorBookingDetailsComponent,
     AdminDetailsPageComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

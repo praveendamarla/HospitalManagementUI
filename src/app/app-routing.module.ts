@@ -13,6 +13,7 @@ import {PatientBookingDetailsComponent} from './patient-booking-details/patient-
 import {DoctorBookingDetailsComponent} from './doctor-booking-details/doctor-booking-details.component';
 import {AdminDetailsPageComponent} from './admin-details-page/admin-details-page.component';
 import {AppointmentComponent} from './appointment/appointment.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'appointment',component:AppointmentComponent},
   {path:'admin-details-page/admin/employees',component:EmployeeListComponent},
   {path:'admin-details-page/admin/create-employee',component:CreateEmployeeComponent},
+  {path:'contact',component:ContactComponent},
   
 ];
 @NgModule({

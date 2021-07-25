@@ -1,5 +1,17 @@
-<div class="container">
-    <h2 class = "textual">User Registration</h2>
+<html>
+  <head> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  /></head>
+<body>
+
+<div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-lg-6">
+    <div class = "col-lg-7 text-center py-5">
+      <h2 class="animate__animated animate__heartBeat animate_infinite">User Registration</h2>
+    </div>
     <form #Registerform = "ngForm" (ngSubmit) = "registerUser()">
         <small class = "text-danger">
             {{msg}}</small>
@@ -74,12 +86,23 @@
         [class.is-invalid] ="cpassword.invalid && cpassword.touched">
         <small class="text-danger" [class.d-none] ="(cpassword.valid == password.value)|| (cpassword.untouched == password.untouched)" > Confirm password and password should match</small>
       </div>
-
+<br>
+      <div  class="offset-0 col-lg-10">
+      <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>   &nbsp;&nbsp;
+      <a  [routerLink] = "['/login']">Already Existing User</a>
+      &nbsp;
+      <a [routerLink] = "['/home']">Home </a>
+      </div>
      
-      <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
-      <small  [routerLink] = "['/login']">Already Existing User</small>
-
     </form>
   <br>
+</div>
+<div class="col-lg-6">
+  <img src="../../assets/img/registration.png" class="img-fluid">
+</div>
+</div>
   </div>
+
+  </body>
+  </html>
 

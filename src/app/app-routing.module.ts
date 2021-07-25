@@ -14,12 +14,14 @@ import {DoctorBookingDetailsComponent} from './doctor-booking-details/doctor-boo
 import {AdminDetailsPageComponent} from './admin-details-page/admin-details-page.component';
 import {AppointmentComponent} from './appointment/appointment.component';
 import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'', redirectTo: 'login', pathMatch: 'full'},
+  {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path:'loginsuccess/:userName', component: LoginsuccessComponent },
   {path:'registration',component:RegistrationComponent},
   {path:'employees',component:EmployeeListComponent},
@@ -35,6 +37,9 @@ const routes: Routes = [
   {path:'admin-details-page/admin/employees',component:EmployeeListComponent},
   {path:'admin-details-page/admin/create-employee',component:CreateEmployeeComponent},
   {path:'contact',component:ContactComponent},
+  {path:'admin-details-page/admin/login',component:LoginComponent},
+  {path:'home',component:HomeComponent},
+  {path:'home/login',component:LoginComponent},
   
 ];
 @NgModule({

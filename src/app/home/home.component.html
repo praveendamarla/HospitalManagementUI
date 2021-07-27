@@ -13,12 +13,12 @@
 </head>
 <body>
 <!---Navigation-->
-<nav class ="navbar navbar-expand-md navbar-light bg-light sticky-top">
-   <div class ="container-fluid">
-       <a class ="navbar-brand" href="#" > <img src="../../assets/img/stars.png"> </a>
-       <button class="navbar-toogler" type="button" data-toogle="collapse" data-target="#navbarREsponsive">
+<nav class ="navbar navbar-expand-md navbar-light bg-light sticky-top" height="55px">
+   <div class ="container-fluid" >
+       <a class ="navbar-brand" href="#" > <img src="../../assets/img/stars.png" height="100px"> </a>
+       <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
            <span class ="navbar-toggler-icon"></span>
-       </button>
+       </button> -->
 
 
        <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -27,16 +27,16 @@
                    <a class="nav-link" href="#">Home</a>
                </li>
                <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" routerLink = "admin" >About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink = "login" >Login/Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Team</a>
+                <a class="nav-link" href="#">Departments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Connect</a>
+                <a class="nav-link"  style="color:red;" href="#">Emergency</a>
             </li>
            </ul>
        </div>
@@ -45,7 +45,7 @@
 
 
 <!--Image Slider-->
-<div id ="slides" class="carousel slide" data-ride="carousel">
+<!-- <div id ="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
@@ -73,7 +73,18 @@
     </div>
 
    </div> 
-</div>
+</div> -->
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <img src="../../assets/img/medical.jpg">
+    </ng-template>  
+    <ng-template carouselSlide>
+      <img src="../../assets/img/about.jpg">
+    </ng-template>  
+    <ng-template carouselSlide>
+      <img src="../../assets/img/1.jfif">
+    </ng-template>  
+  </owl-carousel-o>
 
 <!--Jumbotron-->
 <div class="container-fluid">
@@ -201,7 +212,7 @@
 </div>
 
 <!---Two column Section-->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="twocolumn">
     <div class="row padding">
         <div class="col-lg-6">
             <h2>Our Goal</h2>
@@ -254,6 +265,13 @@
         </div>
     </div>
 </div>
+
+<iframe
+    allow="microphone;"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/8e3c81b5-bbdf-46ad-8f24-f833020552eb">
+</iframe>
 
 <!--Footer-->
 <footer>

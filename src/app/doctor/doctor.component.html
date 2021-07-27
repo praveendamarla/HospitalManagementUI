@@ -1,11 +1,23 @@
-<p>patients Booking List</p>
+<nav   class = "navbar navbar-expand-sm bg-primary navbar-dark">
+
+    <h2> Doctor DashBoard</h2>
+
+    <ul class = "navbar-nav">
+        <li class ="nav-item right">
+            <a routerLink = "home" routerLinkActive = "active" class = "nav-link" >Logout</a>
+        </li>
+        </ul>
+
+</nav>
+
+<h2>List of Patients Bookings</h2>
 <table class = "table table-striped">
     <thead>
         <tr>
             <th> patient name</th>
             <th> bookingdata </th>
             <th> description </th>
-            <th> Actions </th>
+            <th> Booking Status </th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +25,9 @@
             <td> {{ doctor.userName }} </td>
             <td> {{ doctor.dateOfAppointment }} </td>
             <td> {{ doctor.description }} </td>
+            <td>
+                Booking Done Successfully
+            </td>
         </tr>
     </tbody>
 </table>

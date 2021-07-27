@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
 import {User} from './../assets/user'
@@ -22,6 +22,12 @@ export class EmployeeService {
     return this.httpClient.get<Employee[]>(`${this.baseURL}/employees`);
   }
 
+  getDoctorsList(roleName: string): Observable<Employee[]>{
+    let params = new HttpParams();
+    params = params.append('roleName', roleName);
+    return this.httpClient.get<Employee[]>(`${this.baseURL}/employeesByRole`,{params: params});
+  }
+
   createEmployee(employee : Employee): Observable<Object>{
     return this.httpClient.post(`${this.baseURL}/createEmployee`,employee);
   }
@@ -38,11 +44,12 @@ createMailService(user: MailUser){
 
   public loginUserFromRemote(user : Employee):Observable<any>
   {
-    if(user.role == 'Doctor' || user.role == 'Admin'){
     return  this.httpClient.post<any>("http://localhost:8081/login/employee",user);
-    }else {
-      return this.httpClient.post<any>("http://localhost:8081/login/patient",user);
-    }
+    // if(user.role == 'Doctor' || user.role == 'Admin'){
+    // return  this.httpClient.post<any>("http://localhost:8081/login/employee",user);
+    // }else {
+    //   return this.httpClient.post<any>("http://localhost:8081/login/patient",user);
+    // }
   }
 
   public registerUserFromRemote(user : Employee):Observable<any>

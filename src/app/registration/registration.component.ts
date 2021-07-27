@@ -20,6 +20,9 @@ export class RegistrationComponent implements OnInit {
 
   registerUser()
   {
+    this.employee.role = "Patient";
+    this.employee.specialization="Patient";
+    
 this._service.registerUserFromRemote(this.employee).subscribe(
   _data =>
   {

@@ -6,6 +6,8 @@ import {User} from './../assets/user'
 import { PatientBooking } from './patientBooking';
 import { Patient } from './Patient';
 import { Doctor } from './doctor';
+import { MailUser } from './mail-user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +23,18 @@ export class EmployeeService {
   }
 
   createEmployee(employee : Employee): Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}/employees`,employee);
+    return this.httpClient.post(`${this.baseURL}/createEmployee`,employee);
   }
 
   createBooking(patientBooking: PatientBooking){
     return this.httpClient.post("http://localhost:8081/api/createBooking",patientBooking);
   }
+
+
+createMailService(user: MailUser){
+    return this.httpClient.post("http://localhost:8081/api/sendemail",user);
+  }
+
 
   public loginUserFromRemote(user : Employee):Observable<any>
   {

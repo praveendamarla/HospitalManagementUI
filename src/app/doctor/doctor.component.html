@@ -1,12 +1,8 @@
+<h2> Doctor DashBoard</h2>
 <nav   class = "navbar navbar-expand-sm bg-primary navbar-dark">
-
-    <h2> Doctor DashBoard</h2>
-
     <ul class = "navbar-nav">
-        <li class ="nav-item right">
-            <a routerLink = "home" routerLinkActive = "active" class = "nav-link" >Logout</a>
-        </li>
-        </ul>
+ <button routerLink = "home" routerLinkActive = "active" (click)= "navigateToLogin()" class = "btn btn-danger" >Logout</button>
+</ul>
 
 </nav>
 
@@ -31,3 +27,4 @@
         </tr>
     </tbody>
 </table>
+

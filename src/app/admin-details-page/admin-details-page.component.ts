@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Employee } from '../employee'
 import { EmployeeService } from '../employee.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-details-page',
@@ -9,12 +10,14 @@ import { EmployeeService } from '../employee.service';
 })
 export class AdminDetailsPageComponent implements OnInit {
   employees!: Employee[];
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  
+  navigateToLogin() {
+    this.router.navigateByUrl('/home');
+ }
  
 
 }

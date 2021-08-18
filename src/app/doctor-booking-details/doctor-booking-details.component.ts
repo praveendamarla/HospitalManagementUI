@@ -16,6 +16,10 @@ export class DoctorBookingDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  navigateToHome() {
+    this._router.navigateByUrl('/home');
+ }
   mailUser(){
     {
       this._service.createMailService(this.mailuser).subscribe(

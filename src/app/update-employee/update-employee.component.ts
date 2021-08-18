@@ -39,6 +39,9 @@ export class UpdateEmployeeComponent implements OnInit {
   {
     this.router.navigate(['/employees']);
   }
+  navigateToAdmin() {
+    this.router.navigateByUrl('admin-details-page/admin');
+ }
 
 }
 

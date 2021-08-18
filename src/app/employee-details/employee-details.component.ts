@@ -25,4 +25,8 @@ export class EmployeeDetailsComponent implements OnInit {
     });
   }
 
+
+  navigateToAdmin() {
+    this.router.navigateByUrl('admin-details-page/admin');
+ }
 }

@@ -30,4 +30,8 @@ export class DoctorComponent implements OnInit {
 
   }
 
+  navigateToLogin() {
+    this.router.navigateByUrl('/home');
+ }
+
 }

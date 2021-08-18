@@ -42,4 +42,10 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['employee-details',id]);
   }
 
+
+
+  navigateToAdmin() {
+    this.router.navigateByUrl('admin-details-page/admin');
+ }
+
   }

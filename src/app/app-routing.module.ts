@@ -40,6 +40,8 @@ const routes: Routes = [
   {path:'admin-details-page/admin/login',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'home/login',component:LoginComponent},
+  {path:'home/admin',component:AdminComponent},
+  {path:'home/admin/contact',component:ContactComponent},
   
 ];
 @NgModule({

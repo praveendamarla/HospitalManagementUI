@@ -42,8 +42,10 @@
             <input type = "text" class = "form-control" id = "password"
                 [(ngModel)] = "employee.password" name = "password">
         </div>
-    
-        <button class = "btn btn-success" type ="submit" >Submit</button>
-    
+    <br>
+        <div>
+        <button class = "btn btn-success" type ="submit" >Submit</button>&nbsp;&nbsp;
+        <button routerLink = "home" routerLinkActive = "active" (click)= "navigateToAdmin()" class = "btn btn-info" >Admin Dashboard</button>
+    </div>
     </form>
     </div>

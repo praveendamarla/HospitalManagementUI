@@ -38,4 +38,9 @@ export class CreateEmployeeComponent implements OnInit {
     this.saveEmployee();
   }
 
+  navigateToAdmin() {
+    this.router.navigateByUrl('admin-details-page/admin');
+ }
+
+
 }

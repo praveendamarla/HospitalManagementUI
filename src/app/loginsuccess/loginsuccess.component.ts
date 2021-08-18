@@ -101,5 +101,8 @@ export class LoginsuccessComponent implements OnInit {
 
 
 
+navigateToLogin() {
+   this.router.navigateByUrl('/home');
+}
 
 }

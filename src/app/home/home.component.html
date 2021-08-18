@@ -27,17 +27,12 @@
                    <a class="nav-link" href="#">Home</a>
                </li>
                <li class="nav-item">
-                <a class="nav-link" routerLink = "admin" >About</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" routerLink = "login" >Login/Register</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Departments</a>
+               <li class="nav-item">
+                <a class="nav-link"  style="color:red;"  routerLink = "admin" >Emergency</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link"  style="color:red;" href="#">Emergency</a>
-            </li>
+           
            </ul>
        </div>
    </div> 
@@ -76,27 +71,22 @@
 </div> -->
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
-        <img src="../../assets/img/medical.jpg">
+        <img src="../../assets/img/medical1.jpg">
     </ng-template>  
     <ng-template carouselSlide>
-      <img src="../../assets/img/about.jpg">
-    </ng-template>  
-    <ng-template carouselSlide>
-      <img src="../../assets/img/1.jfif">
-    </ng-template>  
+      <img src="../../assets/img/health.jpg">
+    </ng-template> 
+      <ng-template carouselSlide>
+        <img src="../../assets/img/about1.jpg">
+      </ng-template>
   </owl-carousel-o>
 
 <!--Jumbotron-->
 <div class="container-fluid">
     <div class=" row Jumbotron">
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-            <p class="lead"> A web hosting service will allow individuals and organizations to make their website accessible via world </p>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-12">
+            <p class="lead"> Health is like money. we never have a true idea of its value until we lose it. The Greatest wealth is health.</p>
         </div>
-       
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-            <a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Web Hosting</button> </a>
-        </div>
-
     </div>
 </div>
 
@@ -105,12 +95,12 @@
 <div class="conatiner-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
-            <h1 class="display-4"> Built with Ease.</h1>
+            <h1 class="display-4"> Stars Hospital</h1>
         </div>
         <hr>
         <div class="col-12">
-            <p class="lead">Welcome to my bootstrap application for the hospital management system website where you can book appointments of your choice with 
-                your intersted doctor.
+            <p class="lead">Welcome to Stars hospital management system where the patients can book appointments of their choice with 
+                the interested doctor.
             </p>
         </div>
     </div>
@@ -127,7 +117,7 @@
        <div class="col-xs-12 col-sm-6 col-md-4">
            <i class="fas fa-pills"></i>
                <h3>Medicines</h3>
-               <P>We treat all the people equally and all diagnosis all diseases</P>
+               <P>We treat all the people equally and will diagnosis all diseases</P>
            
        </div>
        <div class="col-sm-12 col-md-4">
@@ -142,14 +132,32 @@
 <div class="container-fluid padding">
     <div class="row padding">
         <div class="col-lg-6">
-            <h2>If you build it....</h2>
-            <p>columns will stack automatically on top of each other</p>
-            <P>please do resize to check the functionality</P>
-            <P>you can see all the features of bootstrap, css and all by using and testing
-                depending on different screen resolutions.
-            </P>
+            <h2>Departments</h2>
+            <p>There are lot of departments in the Stars Hospital</p>
+            <ul>
+                <li>
+                    Cardiology 
+                </li>
+                <li>
+                    Oncology 
+                </li>
+                <li>
+                    Gynecology 
+                </li>
+                <li>
+                    Physiotherapy 
+                </li>
+                <li>
+                    Neurology 
+                </li>
+                <li>
+                    Dermatologist 
+                </li>
+            
+            </ul>
+           
+            
             <br> 
-            <a href="#" class="btn btn-primary">Learn More</a>
         </div>
         <div class="col-lg-6">
             <img src="../../assets/img/2.jfif">
@@ -175,26 +183,21 @@
                 <img class="card-img-top" src="../../assets/img/doctor.jfif">
                 <div class="card-body">
                     <h4 class="card-title">Neurologist Sam</h4>
-                    <p class="card-text">Sam is an great neurologist he has nearly 20 yeras experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
+                    <p class="card-text">Sam is an great Neurologist he has nearly 20 yeras experience.</p>
+                   
                 </div>
             </div>
         </div>
-
-
 
         <div class="col-md-4">
             <div class="card">
                 <img class="card-img-top" src="../../assets/img/doctor4.jfif">
                 <div class="card-body">
                     <h4 class="card-title">Dermatologist priya</h4>
-                    <p class="card-text">priya is  Dermatologist  has nearly 10 years experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
+                    <p class="card-text">Priya is  Dermatologist  has nearly 10 years experience.</p>     
                 </div>
             </div>
         </div>
-
-
 
 
         <div class="col-md-4">
@@ -202,8 +205,8 @@
                 <img class="card-img-top" src="../../assets/img/doctor3.jfif">
                 <div class="card-body">
                     <h4 class="card-title">ENT krish</h4>
-                    <p class="card-text">Krish is an great ENt he has nearly 15 yeras experience.</p>
-                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
+                    <p class="card-text">Krish is an great ENT he has nearly 15 yeras experience.</p>
+                   
                 </div>
             </div>
         </div>
@@ -240,7 +243,6 @@
                 Will harm him more than by telling him
                 That he may lose,
                 But then he wins.</p>
-          
         </div>
         <div class="col-lg-6">
             <img src="../../assets/img/about.jpg" class="img-fluid">
@@ -258,20 +260,12 @@
         </div>
         <div class= "col-12 social padding">
             <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
             <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 </div>
-
-<iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/8e3c81b5-bbdf-46ad-8f24-f833020552eb">
-</iframe>
 
 <!--Footer-->
 <footer>
